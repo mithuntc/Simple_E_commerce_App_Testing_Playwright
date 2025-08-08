@@ -2,15 +2,18 @@ import { test, expect } from '@playwright/test';
 test('E_commerce_App_test', async ({ page }) => {
     //hitting the landing page
     await page.goto('http://localhost:3000/');
+    await page.screenshot({ path: 'screenshots/main-page.png' });
     //checking the title of the item to be added (Mens Casual ..)
     const title = await page.locator('div[id="2"] h5[class="card-title"]').textContent();
     console.log(title);
     await page.locator('div[id="2"] button[class="btn btn-dark m-1"]').click(); // clicking the add to cart button
     await page.click('a[href="/cart"]');//clicking the cart link
+    await page.screenshot({ path: 'screenshots/cart-page.png' });
     //checking the exact product title in the cart
     await expect(page.locator('div[class="col-lg-5 col-md-6"] p strong')).toContainText('Mens Casual');
     //goto checkout page   
     await page.click('a[href="/checkout"]');
+    await page.screenshot({ path: 'screenshots/chec-kout-page.png' });
     //filling the form
     await page.locator('#firstName').fill('John');
     await page.locator('#lastName').fill('Carter');
