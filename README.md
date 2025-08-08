@@ -1,4 +1,5 @@
 **Automated E-commerce Add to Cart Functionality Testing**
+
 This project provides an automated testing solution to validate the "Add to Cart" and related functionalities of an e-commerce application using Playwright. The tests are designed to ensure a seamless user experience from adding products to the cart to navigating to the payment page.
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 Features
